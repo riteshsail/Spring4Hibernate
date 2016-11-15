@@ -18,10 +18,10 @@ import com.pratice.audit.Audit;
 public class MainController {
 
 @Audit(value = "Home Page!!")
-@RequestMapping(value="/home.html")
-public String getHomePage()
+@RequestMapping(value="{user}/home.html")
+public String getHomePage(@PathVariable("user") String name)
 {
-	System.out.println(">>>>>>>>>");
+	System.out.println("User Name passed is " + name);
 	return "home";
 }
 
